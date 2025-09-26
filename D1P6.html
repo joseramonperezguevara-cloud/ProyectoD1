@@ -1,0 +1,45 @@
+<!-- index.html
+Juego de memoria (Matching Game) - Archivo HTML
+Contiene la estructura del tablero, contadores y botones.
+-->
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Juego de Memoria - 60s</title>
+  <link rel="stylesheet" href="../CSS/D1P6.css">
+</head>
+<body>
+  <main class="container">
+    <h1>Juego de Memoria</h1>
+    <div class="controls">
+      <div class="stats">
+        <div>Intentos: <span id="attempts">0</span></div>
+        <div>Fallos: <span id="errors">0</span></div>
+        <div>Tiempo: <span id="timer">60</span>s</div>
+      </div>
+      <div class="buttons">
+        <button id="restart">Reiniciar</button>
+      </div>
+    </div>
+
+    <!-- Tablero de cartas: 12 cartas (6 parejas) -->
+    <section id="board" class="board" aria-label="Tablero de juego">
+      <!-- Las cartas se generan dinámicamente desde script.js -->
+    </section>
+
+    <!-- Mensaje de victoria -->
+    <div id="message" class="message hidden" role="dialog" aria-live="polite">
+      <div class="message-content">
+        <h2>¡Ganaste!</h2>
+        <p>Intentos: <span id="final-attempts">0</span></p>
+        <p>Tiempo restante: <span id="final-time">0</span>s</p>
+        <button id="play-again">Jugar otra vez</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="../JS/D1P6.js"></script>
+</body>
+</html>

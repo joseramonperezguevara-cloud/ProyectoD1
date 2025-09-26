@@ -1,0 +1,22 @@
+.Estilo {
+  font-family: Georgia, "Times New Roman", serif; 
+  margin: 40px; 
+  line-height: 1.6; 
+  background-image: url('../Imagenes/SB.jpeg');      
+  background-size: cover;
+  background-repeat: no-repeat; 
+  background-attachment: fixed; 
+  /* Centramos con Flexbox */
+  display: flex;
+  justify-content: center; 
+  align-items: center;     /* centra vertical */
+  min-height: 100vh;       /* ocupa toda la pantalla */
+}
+
+.box {
+  background: rgba(139, 18, 18, 0.345); /* fondo blanco con transparencia */
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(6, 5, 5, 0.689);
+  text-align: center; /* centra el texto dentro */
+}

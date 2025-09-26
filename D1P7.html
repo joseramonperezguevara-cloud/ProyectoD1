@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Clima Actual</title>
+  <link rel="stylesheet" href="../CSS/D1P7.css">
+  <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div class="app">
+    <h1>Clima Actual</h1>
+
+    <div class="search">
+      <input type="text" id="cityInput" placeholder="Buscar ciudad...">
+      <button id="searchBtn">Buscar</button>
+    </div>
+
+    <div id="results"></div>
+
+    <div id="spinner" class="spinner hidden"></div>
+
+    <div id="weatherCard" class="card hidden">
+      <h2 id="location"></h2>
+      <div class="icon-temp">
+        <i id="weatherIcon" class="fas"></i>
+        <span id="temperature"></span>
+      </div>
+      <p id="description"></p>
+      <p><strong>Sensación:</strong> <span id="feelsLike"></span></p>
+      <p><strong>Humedad:</strong> <span id="humidity"></span></p>
+      <p><strong>Viento:</strong> <span id="wind"></span></p>
+    </div>
+
+    <p id="errorMsg" class="error"></p>
+  </div>
+
+  <script src="../JS/D1P7.js"></script>
+</body>
+</html>

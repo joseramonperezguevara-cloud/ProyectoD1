@@ -1,0 +1,123 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>MeditApp — Landing</title>
+  <!-- Enlaza el CSS -->
+  <link rel="stylesheet" href="../CSS/D1P5.css" />
+</head>
+<body>
+  <!-- HEADER: navegación y hero -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="#" aria-label="MeditApp - Inicio">MeditApp</a>
+      <nav class="main-nav" role="navigation" aria-label="Navegación principal">
+        <ul>
+          <li><a href="#features">Características</a></li>
+          <li><a href="#about">Acerca</a></li>
+          <li><a href="#contact">Contacto</a></li>
+          <li><button id="subscribeBtn" class="btn primary">Suscríbete</button></li>
+        </ul>
+      </nav>
+    </div>
+
+    <!-- HERO (section semántica) -->
+    <section class="hero container" aria-labelledby="hero-title">
+      <div class="hero-text">
+        <h1 id="hero-title">Encuentra calma en 10 minutos al día</h1>
+        <p>MeditApp te guía con meditaciones cortas, sonidos relajantes y seguimiento de hábitos.</p>
+        <div class="cta-row">
+          <a class="btn primary" href="#contact">Comenzar</a>
+          <a class="btn ghost" href="#features">Ver características</a>
+        </div>
+      </div>
+      <figure class="hero-figure" aria-hidden="true">
+        <!-- Imagen decorativa o ilustración SVG -->
+        <svg width="200" height="200" viewBox="0 0 100 100" class="hero-svg">
+          <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </figure>
+    </section>
+  </header>
+
+  <!-- MAIN: contenido principal con secciones semánticas -->
+  <main id="main" role="main">
+    <!-- FEATURES: grid de características -->
+    <section id="features" class="container features" aria-labelledby="features-title">
+      <h2 id="features-title">Características</h2>
+      <div class="features-grid">
+        <article class="feature-card">
+          <h3>Guías diarias</h3>
+          <p>Sesiones guiadas para todos los niveles, 5–20 minutos.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Sonidos naturales</h3>
+          <p>Biblioteca de sonidos para meditar y relajarte.</p>
+        </article>
+        <article class="feature-card">
+          <h3>Seguimiento</h3>
+          <p>Controla tu progreso con gráficos semanales.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT: article dentro de section -->
+    <section id="about" class="container about" aria-labelledby="about-title">
+      <h2 id="about-title">Sobre la app</h2>
+      <article>
+        <p>Somos un equipo dedicado a la salud mental. Esta landing es un ejemplo semántico con HTML5, CSS3 y JavaScript para validación y animaciones.</p>
+      </article>
+    </section>
+
+    <!-- CONTACT: formulario (validación JS) -->
+    <section id="contact" class="container contact" aria-labelledby="contact-title">
+      <h2 id="contact-title">Contacto</h2>
+      <form id="contactForm" novalidate aria-describedby="contact-desc">
+        <p id="contact-desc" class="sr-only">Formulario de contacto. Campos: nombre, email y mensaje.</p>
+
+        <label for="name">Nombre</label>
+        <input id="name" name="name" type="text" placeholder="Tu nombre" required />
+        <span class="error" id="error-name" aria-live="polite"></span>
+
+        <label for="email">Correo electrónico</label>
+        <input id="email" name="email" type="email" placeholder="tu@ejemplo.com" required />
+        <span class="error" id="error-email" aria-live="polite"></span>
+
+        <label for="message">Mensaje</label>
+        <textarea id="message" name="message" rows="5" placeholder="Escribe tu mensaje..." required></textarea>
+        <span class="error" id="error-message" aria-live="polite"></span>
+
+        <div class="form-actions">
+          <button type="submit" class="btn primary">Enviar</button>
+          <button type="button" id="subscribeBtnForm" class="btn secondary">Suscríbete</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <p>© <span id="year"></span> MeditApp. Todos los derechos reservados.</p>
+      <ul class="social">
+        <li><a href="#" aria-label="Twitter">T</a></li>
+        <li><a href="#" aria-label="Instagram">I</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- MODAL (oculto por defecto) -->
+  <div id="modalOverlay" class="modal-overlay" role="dialog" aria-modal="true" aria-hidden="true">
+    <div class="modal" role="document">
+      <button id="closeModal" class="modal-close" aria-label="Cerrar">&times;</button>
+      <h3 id="modalTitle">¡Gracias por contactarnos!</h3>
+      <p id="modalMsg">Tu mensaje fue enviado correctamente.</p>
+      <div id="confettiContainer" class="confetti-container" aria-hidden="true"></div>
+    </div>
+  </div>
+
+  <!-- Enlaza el JS -->
+  <script src="../JS/D1P5.js"></script>
+</body>
+</html>

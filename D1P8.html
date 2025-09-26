@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>RunnerJS — Proyecto </title>
+  <link rel="stylesheet" href="../CSS/D1P8.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="brand">Practicas Jose Ramon Perez Guevara</h1>
+      <nav aria-label="Navegación principal">
+        <ul class="nav-list">
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="inicio" class="container">
+    <section class="hero">
+      <h2>Proyecto  — Practicas y Juego</h2>
+    </section>
+
+    <section id="practicas" class="cards-section">
+      <h3>Prácticas</h3>
+      <div id="cardsGrid" class="cards-grid" aria-live="polite">
+        <!-- Las tarjetas se generan desde script -->
+      </div>
+    </section>
+
+    <section class="about">
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <small>© <span id="year"></span> — Proyecto</small>
+    </div>
+  </footer>
+
+  <script>
+    // Lista de prácticas (edítala con tus rutas reales)
+    const practicas = [
+      { title: "Práctica 1", path: "/HTML/D1P1.html",desc: "Mi primer Pagina Web"},
+      { title: "Práctica 2", path: "/HTML/D1P2.html",desc: "Inicio de Sesion"},
+      { title: "Práctica 3", path: "/HTML/D1P3.html",desc: "Tarjeta de Presentacion"},
+      { title: "Práctica 4", path: "/HTML/D1P4.html",desc: "Piedra, Papel Tijeras"},
+      { title: "Práctica 5", path: "/HTML/D1P5.html",desc: "Pagina de Meditacion"},
+      { title: "Práctica 6", path: "/HTML/D1P6.html",desc: "Juego de Memoria"},
+      { title: "Práctica 7", path: "/HTML/D1P7.html",desc:"Clima"},
+
+    ];
+
+    const grid = document.getElementById('cardsGrid');
+
+    practicas.forEach(p => {
+      const a = document.createElement('a');
+      a.className = 'card';
+      a.href = p.path;
+      a.innerHTML = `<h4>${p.title}</h4><p>${p.desc}</p>`;
+      // Si la carpeta aún no existe, el enlace seguirá ahí; reemplaza las rutas por las reales.
+      grid.appendChild(a);
+    });
+
+    // Tarjeta especial del Proyecto (Juego)
+      const gameCard = document.createElement('a');
+      gameCard.className = 'card special';
+      gameCard.href = "/HTML/D1P9.html";  
+      gameCard.innerHTML = `<h4>Proyecto: Running for Living</h4><p>Haz clic para jugar</p>`;
+      grid.appendChild(gameCard);
+
+
+    // Año dinámico
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+/* Fondo degradado animado */
+body{
+  font-family: Arial, sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(-45deg, #ff9a9e, #fad0c4, #a1c4fd, #c2e9fb);
+  background-size: 400% 400%;
+  animation: gradientBG 12s ease infinite;
+}
+
+/* Animación del fondo */
+@keyframes gradientBG {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* Contenedor central */
+.game-container {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 30px;
+  border-radius: 20px;
+  text-align: center;
+  box-shadow: 0px 8px 20px rgba(0,0,0,0.2);
+  width: 350px;
+}
+
+/* Título */
+h1 {
+  margin-bottom: 20px;
+  color: #333;
+  font-size: 1.8em;
+}
+
+/* Botones */
+.buttons {
+  margin: 20px 0;
+}
+
+button.choice {
+  font-size: 18px;
+  padding: 15px 25px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+  background: #4CAF50;
+  color: white;
+  cursor: pointer;
+  transition: transform 0.2s, background 0.3s;
+}
+
+button.choice:hover {
+  background: #388E3C;
+  transform: scale(1.1);
+}
+
+/* Resultado */
+#resultado {
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
+  min-height: 60px;
+}
+
+/* Marcador */
+.scoreboard {
+  margin-top: 20px;
+  font-size: 16px;
+  background: #f1f8e9;
+  padding: 10px;
+  border-radius: 10px;
+}

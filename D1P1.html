@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Mi página web</title>
+  <style>
+    body {
+      font-family: Georgia, "Times New Roman", serif; 
+      margin: 40px; 
+      line-height: 1.6; 
+      background-color: aquamarine;
+      background-size: cover
+      background-repeat: no-repeat; 
+      background-attachment: fixed; 
+      color: #000; 
+    }
+    h1 { font-size: 2.2rem; margin-bottom: 0.2rem; }
+    h2 { font-size: 1.8rem; margin-top: 2rem; }
+    nav ul { list-style: disc; padding-left: 20px; }
+    nav a { color: #11843b; text-decoration: underline; }
+    form { display: flex; align-items: center; gap: 14px; flex-wrap: wrap; }
+    label { font-weight: 600; }
+    input[type="text"], input[type="email"] {
+      width: 220px; padding: 6px; border: 1px solid #999;
+    }
+    textarea {
+      width: 420px; height: 50px; padding: 6px; border: 1px solid #420e42; resize: vertical;
+    }
+    button { padding: 6px 12px; }
+    footer { margin-top: 24px; background: rgba(14, 15, 98, 0.7); padding: 10px; border-radius: 6px; }
+    section, nav { background: rgba(27, 17, 17, 0.8); padding: 15px; border-radius: 8px; margin-bottom: 20px; }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <ul>
+      <li><a href="#inicio">Inicio</a></li>
+      <li><a href="#acerca">Acerca de</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <section id="inicio">
+      <h1>Bienvenidos a mi página web</h1>
+      <p>En esta página encontrarás información sobre mi trabajo y proyectos.</p>
+    </section>
+
+    <section id="acerca">
+      <h2>Acerca de mí</h2>
+      <p>Soy un desarrollador web apasionado por la tecnología y el diseño.</p>
+    </section>
+
+    <section id="contacto">
+      <h2>Contacto</h2>
+      <p>Puedes contactarme a través del siguiente formulario:</p>
+
+      <form action="#" method="post">
+        <label for="nombre">Nombre:</label>
+        <input id="nombre" name="nombre" type="text" />
+
+        <label for="email">Email:</label>
+        <input id="email" name="email" type="email" />
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje"></textarea>
+
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    Derechos reservados © 2023 Mi página web
+  </footer>
+
+</body>
+</html>

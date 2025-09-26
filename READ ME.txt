@@ -1,0 +1,1 @@
+Para iniciar el Proyecto debes abrir vs code, luego de eso apretar las tclas c+ñ y colocar node server.js que abrirá la pagina con todas las practicas y proyectos

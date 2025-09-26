@@ -1,0 +1,120 @@
+/* ============================
+   styles.css
+   Comentarios: estilos responsivos, animaciones keyframes, flexbox y grid.
+   ============================ */
+
+/* Reset ligero */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html,body { height: 100%; font-family: Inter, system-ui, sans-serif; color:#222; background:#f7f8fb; }
+
+/* Contenedor central */
+.container { width: min(1100px, 92%); margin: 0 auto; }
+
+/* Header */
+.site-header { background: linear-gradient(180deg,#392ddda1 0%, #f2f6ff 100%); padding: 1rem 0; box-shadow: 0 1px 6px rgba(16,24,40,0.04); position: sticky; top:0; z-index:100; }
+.header-inner { display:flex; align-items:center; justify-content:space-between; gap:1rem; }
+.logo { font-weight:700; font-size:1.25rem; text-decoration:none; color: #0f172a; }
+
+/* Navegación */
+.main-nav ul { list-style:none; display:flex; gap:0.5rem; align-items:center; }
+.main-nav a { text-decoration:none; padding:0.5rem 0.75rem; border-radius:8px; transition: background .25s, transform .15s; }
+.main-nav a:hover { background: rgba(15,23,42,0.05); transform: translateY(-2px); }
+
+/* Botones */
+.btn { display:inline-block; font-weight:600; border-radius: 10px; padding:0.6rem 0.9rem; cursor:pointer; border: none; text-decoration:none; }
+.btn.primary { background: linear-gradient(90deg,#6366f1,#06b6d4); color:white; box-shadow: 0 6px 18px rgba(99,102,241,0.14); }
+.btn.secondary { background:#e6eefc; color:#0f172a; }
+.btn.ghost { background: transparent; border: 1px solid rgba(15,23,42,0.06); color:#0f172a; }
+
+/* HERO */
+.hero { display:flex; align-items:center; gap:2rem; padding:2rem 0; }
+.hero-text { flex:1; animation: fadeInUp .8s ease both; }
+.hero-figure { width:220px; display:flex; align-items:center; justify-content:center; }
+.hero h1 { font-size:2rem; margin-bottom:0.5rem; }
+.hero p { opacity:0.85; margin-bottom:1rem; }
+
+/* CTA row */
+.cta-row { display:flex; gap:0.6rem; }
+
+/* Features grid */
+.features { padding:2rem 0; }
+.features-grid { display:grid; grid-template-columns: repeat(3,1fr); gap:1rem; margin-top:1rem; }
+.feature-card { background:white; padding:1rem; border-radius:12px; box-shadow: 0 6px 20px rgba(16,24,40,0.04); transition: transform .25s ease, box-shadow .25s ease; }
+.feature-card:hover { transform: translateY(-6px); box-shadow: 0 10px 30px rgba(16,24,40,0.08); }
+
+/* About & Contact */
+.about { padding:1rem 0; }
+.contact { padding:2rem 0; background:linear-gradient(180deg,#fff,#fbfdff); border-radius:12px; margin:1rem 0; }
+
+/* Formulario */
+form { display:flex; flex-direction:column; gap:0.5rem; }
+label { font-weight:600; }
+input, textarea { padding:0.7rem; border-radius:8px; border:1px solid rgba(15,23,42,0.08); background:white; transition: box-shadow .15s ease, transform .15s ease; }
+input:focus, textarea:focus { outline:none; box-shadow: 0 6px 18px rgba(99,102,241,0.12); transform: translateY(-2px); }
+.error { color:#ef4444; font-size:0.9rem; min-height:1.1rem; }
+
+/* Form actions */
+.form-actions { display:flex; gap:0.6rem; margin-top:0.5rem; }
+
+/* Footer */
+.site-footer { padding:1.2rem 0; margin-top:2rem; border-top:1px solid rgba(15,23,42,0.04); }
+.footer-inner { display:flex; justify-content:space-between; align-items:center; gap:1rem; }
+
+/* Modal overlay */
+.modal-overlay { position:fixed; inset:0; display:flex; align-items:center; justify-content:center; background: rgba(2,6,23,0.5); visibility:hidden; opacity:0; transition: opacity .2s ease, visibility .2s; z-index:200; }
+.modal-overlay[aria-hidden="false"] { visibility:visible; opacity:1; }
+.modal { background:white; width: min(520px, 94%); border-radius:12px; padding:1.2rem; position:relative; box-shadow: 0 12px 40px rgba(2,6,23,0.2); overflow:hidden; }
+.modal-close { position:absolute; right:0.6rem; top:0.4rem; background:transparent; border:none; font-size:1.6rem; cursor:pointer; }
+
+/* Confetti container (position relative to modal) */
+.confetti-container { position:absolute; inset:0; pointer-events:none; overflow:hidden; }
+
+/* Confetti pieces: estilo base (cada pieza se crea por JS) */
+.confetti {
+  position:absolute;
+  width:10px; height:14px;
+  border-radius:2px;
+  opacity:0.95;
+  transform-origin:center;
+  will-change: transform, top, left;
+  animation: confettiFall linear forwards;
+}
+
+/* Keyframes */
+
+/* Fade in up used en hero */
+@keyframes fadeInUp {
+  from { opacity:0; transform: translateY(12px); }
+  to { opacity:1; transform: translateY(0); }
+}
+
+/* Confetti: movimiento descendente con rotación */
+@keyframes confettiFall {
+  0% { transform: translateY(-10%) rotate(0deg); opacity:1; }
+  100% { transform: translateY(120%) rotate(360deg); opacity:0.95; }
+}
+
+/* small transitions for hover effects */
+a, button { transition: transform .15s ease, opacity .15s ease; }
+
+/* Accessibility helper (oculto visual pero accesible) */
+.sr-only { position:absolute; left:-10000px; top:auto; width:1px; height:1px; overflow:hidden; }
+
+/* ============================
+   Responsive (mobile-first)
+   ============================ */
+
+/* Mobile layout */
+@media (max-width: 768px) {
+  .header-inner { flex-direction:row; }
+  .main-nav ul { display:none; } /* navegación simple: requiere menú en producción */
+  .hero { flex-direction:column-reverse; gap:1rem; padding:1rem 0; }
+  .hero h1 { font-size:1.5rem; }
+  .features-grid { grid-template-columns: 1fr; }
+  .footer-inner { flex-direction:column; text-align:center; gap:0.5rem; }
+}
+
+/* Desktop tweaks */
+@media (min-width: 769px) {
+  .main-nav ul { display:flex; }
+}
